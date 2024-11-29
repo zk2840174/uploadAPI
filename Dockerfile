@@ -1,4 +1,5 @@
-FROM ubuntu:latest
-LABEL authors="z1"
+FROM openjdk:17-jdk-alpine
 
-ENTRYPOINT ["top", "-b"]
+COPY build/libs/*.jar app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
